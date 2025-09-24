@@ -22,7 +22,15 @@
   margin: 0 auto;
 }
 
+.logoImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
 .logo {
+  display: flex;
+  justify-content: space-evenly;
   font-size: 1.8rem;
   font-weight: bold;
   color: #D4AF37;
@@ -54,7 +62,7 @@
 
 .nav a:hover {
   color: #D4AF37;
-  background-color: #F7E7CE;
+  background-color: #F5F5F5;
 }
 
 .nav a::after {

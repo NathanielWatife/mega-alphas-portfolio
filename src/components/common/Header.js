@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './Header.css'
+import logo from '../assets/images/logo.png'
 
 const Header = () => {
     return (
         <header className="header">
             <div className="header-container">
-                <Link to='/' className="logo">Elite Consulting</Link>
+                <Link to='/' className="logo"> 
+                    <img src={logo} alt="Company Logo" className="logoImg" />
+                    Alphas Consulting
+                </Link>
 
                 <nav className="nav">
                     <ul>
