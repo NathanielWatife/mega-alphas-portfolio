@@ -52,7 +52,7 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
+      details: '+234 9157444669',
       description: 'Mon-Fri from 9am to 6pm'
     },
     {
@@ -255,7 +255,7 @@ const Contact = () => {
       </section>
 
       {/* Enhanced Map Section */}
-      <section className="map-section">
+      {/* <section className="map-section">
         <div className="container">
           <div className="map-header">
             <h2>Visit Our Office</h2>
@@ -265,7 +265,7 @@ const Contact = () => {
             <div className="map-placeholder">
               <div className="map-content">
                 <div className="map-icon">🏢</div>
-                <h3>Elite Consulting Headquarters</h3>
+                <h3>Mega Alphs Limited</h3>
                 <p>123 Business District, New York, NY 10001</p>
                 <div className="map-features">
                   <span>✓ Free Parking</span>
@@ -276,7 +276,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Enhanced Quick CTA */}
       <section className="contact-cta">
@@ -285,8 +285,8 @@ const Contact = () => {
             <h2>Need Immediate Assistance?</h2>
             <p>Call us now for urgent consulting needs or schedule a same-day consultation.</p>
             <div className="cta-actions">
-              <a href="tel:+15551234567" className="cta-button primary">
-                <span>Call Now: +1 (555) 123-4567</span>
+              <a href="tel:+234 9157444669" className="cta-button primary">
+                <span>Call Now: +234 9157444669</span>
               </a>
               <Link to="/services" className="cta-button secondary">
                 Browse Services
