@@ -75,13 +75,13 @@ const About = () => {
         </div>
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">About Elite Business Consulting</h1>
+            <h1 className="hero-title">About Mega Alphs Limited</h1>
             <p className="hero-subtitle">
               Your trusted partner for business transformation and sustainable growth. 
               We combine strategic vision with practical execution to deliver exceptional results.
             </p>
             <div className="hero-badge">
-              <span>Trusted by Industry Leaders Since 2008</span>
+              <span>Trusted by Industry Leaders</span>
             </div>
           </div>
         </div>
@@ -117,9 +117,9 @@ const About = () => {
           <div className="story-content">
             <div className="story-text">
               <div className="section-badge">Our Journey</div>
-              <h2>Building Excellence Since 2008</h2>
+              <h2>Building Excellence</h2>
               <p>
-                Founded with a passion for business excellence, Elite Business Consulting emerged from recognizing 
+                Founded with a passion for business excellence, Mega Alphs Limited emerged from recognizing 
                 that many organizations struggle to translate potential into performance. Our journey began over 
                 a decade ago when our founder, a seasoned industry expert, saw the gap between business strategy 
                 and practical execution.

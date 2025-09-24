@@ -84,7 +84,7 @@ const Footer = () => {
             </li>
             <li>
               <span className="contact-icon">📞</span>
-              <span>+1 (555) 123-4567</span>
+              <span>+234 9157444669</span>
             </li>
             <li>
               <span className="contact-icon">🏢</span>
@@ -112,7 +112,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {currentYear} Elite Business Consulting. All rights reserved.</p>
+          <p>&copy; {currentYear} Mega Alphs Limited. All rights reserved.</p>
           <div className="footer-legal">
             <Link to="/privacy" className="legal-link">Privacy Policy</Link>
             <Link to="/terms" className="legal-link">Terms of Service</Link>
