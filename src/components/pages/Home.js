@@ -48,11 +48,11 @@ const Home = () => {
         </div>
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Premium Consulting Since 2010</span>
+            <span>Premium Consulting</span>
           </div>
           <h1 className="hero-title">
-            <span className="title-line">Strategic Excellence</span>
-            <span className="title-line accent">For Visionary Leaders</span>
+            <span className="title-line">I am Olaide Omobolaji</span>
+            <span className="title-line accent">Visionary Brand Strategist Marketing Alchemist & Entrepreneur</span>
           </h1>
           <p className="hero-subtitle">
             Transform your business with data-driven strategies, innovative solutions, 

@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="footer-content">
         {/* Company Info */}
         <div className="footer-section">
-          <h3>Elite Consulting</h3>
+          <h3>Mega Alphs Limited</h3>
           <p>Transforming businesses through strategic innovation and expert guidance. Your success is our mission.</p>
           <div className="social-links">
             <a href="#" className="social-link" aria-label="Facebook">
