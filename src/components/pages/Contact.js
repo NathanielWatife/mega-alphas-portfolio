@@ -46,7 +46,7 @@ const Contact = () => {
     {
       icon: '📧',
       title: 'Email Us',
-      details: 'info@eliteconsulting.com',
+      details: 'olaideomobolaji2000@gmail.com',
       description: 'Send us an email anytime'
     },
     {

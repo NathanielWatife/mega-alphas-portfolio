@@ -80,7 +80,7 @@ const Footer = () => {
           <ul className="contact-info-footer">
             <li>
               <span className="contact-icon">📧</span>
-              <span>info@eliteconsulting.com</span>
+              <span>olaideomobolaji2000@gmail.com</span>
             </li>
             <li>
               <span className="contact-icon">📞</span>
