@@ -1,0 +1,520 @@
+/* src/components/pages/Services.css */
+.services-page {
+  background: #FFFFFF;
+}
+
+/* Enhanced Page Header */
+.page-header {
+  background: linear-gradient(135deg, #0B1C2C 0%, #1A1A1A 100%);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  animation: backgroundFloat 8s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(1deg); }
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.header-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #D4AF37;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); }
+  to { text-shadow: 0 2px 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4); }
+}
+
+.header-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.header-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+  animation: statPulse 2s ease-in-out infinite;
+}
+
+.stat:nth-child(1) { animation-delay: 0s; }
+.stat:nth-child(2) { animation-delay: 0.5s; }
+.stat:nth-child(3) { animation-delay: 1s; }
+
+@keyframes statPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #D4AF37;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Services Intro */
+.services-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-intro h2 {
+  font-size: 2.8rem;
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+}
+
+.services-intro p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Enhanced Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(50px);
+  box-shadow: 0 10px 30px rgba(26, 26, 26, 0.1);
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: cardEntrance 0.8s ease-out;
+}
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.service-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+  border-color: #D4AF37;
+}
+
+.service-card.hovered {
+  z-index: 10;
+}
+
+.service-card-inner {
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border-radius: 18px;
+}
+
+.service-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  color: #D4AF37;
+  transition: transform 0.3s ease;
+}
+
+.icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.service-card:hover .icon-glow {
+  width: 100px;
+  height: 100px;
+}
+
+.service-card h3 {
+  color: #1A1A1A;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.service-features {
+  margin-bottom: 2rem;
+}
+
+.service-features h4 {
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.service-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.service-features li:hover {
+  transform: translateX(5px);
+  color: #1A1A1A;
+}
+
+.feature-icon {
+  color: #D4AF37;
+  font-weight: bold;
+}
+
+.service-actions {
+  text-align: center;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #D4AF37, #B8941F);
+  color: #1A1A1A;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.service-link:hover::before {
+  left: 100%;
+}
+
+.service-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.link-arrow {
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover .link-arrow {
+  transform: translateX(5px);
+}
+
+/* Hover Effect Elements */
+.service-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.service-card:hover .service-hover-effect {
+  left: 100%;
+}
+
+.service-sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #D4AF37;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.service-card:hover .service-sparkle {
+  opacity: 0.6;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+/* Enhanced CTA Section */
+.services-cta {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #F7E7CE, #FFFFFF);
+  text-align: center;
+  position: relative;
+}
+
+.cta-content h2 {
+  font-size: 2.8rem;
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.3rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, #D4AF37, #B8941F);
+  color: #1A1A1A;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #1A1A1A;
+  border-color: #D4AF37;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+}
+
+.cta-button.primary:hover {
+  background: linear-gradient(135deg, #B8941F, #D4AF37);
+}
+
+.cta-button.secondary:hover {
+  background: #D4AF37;
+  color: #1A1A1A;
+}
+
+.button-sparkle {
+  margin-left: 0.5rem;
+  animation: sparkleSpin 1s ease-in-out infinite;
+}
+
+@keyframes sparkleSpin {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+}
+
+/* Benefits Section */
+.services-benefits {
+  padding: 5rem 2rem;
+  background: #FFFFFF;
+}
+
+.services-benefits h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #1A1A1A;
+  margin-bottom: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: #F7E7CE;
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  border-color: #D4AF37;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #D4AF37;
+}
+
+.benefit-card h3 {
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 4rem 1.5rem;
+  }
+
+  .header-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-inner {
+    padding: 2rem;
+  }
+
+  .services-cta {
+    padding: 4rem 1rem;
+  }
+}
