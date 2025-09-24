@@ -217,22 +217,22 @@ const Contact = () => {
                 <h3>Business Hours</h3>
                 <div className="hours-list">
                   <div className="hour-item">
-                    <span className="day">Monday - Friday</span>
+                    <span className="day">Monday - Friday</span> <br></br>
                     <span className="time">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="hour-item">
-                    <span className="day">Saturday</span>
+                    <span className="day">Saturday</span><br></br>
                     <span className="time">10:00 AM - 4:00 PM</span>
                   </div>
                   <div className="hour-item">
-                    <span className="day">Sunday</span>
+                    <span className="day">Sunday</span><br></br>
                     <span className="time">Closed</span>
                   </div>
                 </div>
               </div>
 
               {/* Enhanced Social Links */}
-              <div className="social-section">
+              {/* <div className="social-section">
                 <h3>Follow Us</h3>
                 <div className="social-links">
                   <a href="#" className="social-link" aria-label="LinkedIn">
@@ -248,7 +248,7 @@ const Contact = () => {
                     <span className="social-text">Facebook</span>
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
