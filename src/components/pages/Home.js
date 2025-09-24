@@ -69,15 +69,15 @@ const Home = () => {
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-number" data-count="500">0</div>
+              <div className="stat-number" data-count="500"></div>
               <div className="stat-label">Projects Completed</div>
             </div>
             <div className="stat">
-              <div className="stat-number" data-count="150">0</div>
+              <div className="stat-number" data-count="150"></div>
               <div className="stat-label">Global Clients</div>
             </div>
             <div className="stat">
-              <div className="stat-number" data-count="15">0</div>
+              <div className="stat-number" data-count="15"></div>
               <div className="stat-label">Years Experience</div>
             </div>
           </div>
