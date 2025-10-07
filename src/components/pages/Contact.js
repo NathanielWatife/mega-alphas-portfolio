@@ -22,12 +22,15 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   setIsSubmitting(true);
   
   try {
-    const response = await fetch(`${API_BASE_URL}api/contact/submit`, {
+    // Fixed: Use the correct API base URL from environment variable
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://mega-alphas-portfolio-backend-api.onrender.com';
+    
+    const response = await fetch(`${API_BASE_URL}/api/contact/submit`, { // Added leading slash
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -245,52 +248,11 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Enhanced Social Links */}
-              {/* <div className="social-section">
-                <h3>Follow Us</h3>
-                <div className="social-links">
-                  <a href="#" className="social-link" aria-label="LinkedIn">
-                    <span className="social-icon">💼</span>
-                    <span className="social-text">LinkedIn</span>
-                  </a>
-                  <a href="#" className="social-link" aria-label="Twitter">
-                    <span className="social-icon">🐦</span>
-                    <span className="social-text">Twitter</span>
-                  </a>
-                  <a href="#" className="social-link" aria-label="Facebook">
-                    <span className="social-icon">📘</span>
-                    <span className="social-text">Facebook</span>
-                  </a>
-                </div>
-              </div> */}
+            
             </div>
           </div>
         </div>
       </section>
-
-      {/* Enhanced Map Section */}
-      {/* <section className="map-section">
-        <div className="container">
-          <div className="map-header">
-            <h2>Visit Our Office</h2>
-            <p>Schedule a meeting at our conveniently located headquarters</p>
-          </div>
-          <div className="map-container">
-            <div className="map-placeholder">
-              <div className="map-content">
-                <div className="map-icon">🏢</div>
-                <h3>Mega Alphs Limited</h3>
-                <p>123 Business District, New York, NY 10001</p>
-                <div className="map-features">
-                  <span>✓ Free Parking</span>
-                  <span>✓ Metro Access</span>
-                  <span>✓ Conference Rooms</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Enhanced Quick CTA */}
       <section className="contact-cta">
