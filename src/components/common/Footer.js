@@ -35,16 +35,16 @@ const Footer = () => {
           <h3>Mega Alphs Limited</h3>
           <p>Transforming businesses through strategic innovation and expert guidance. Your success is our mission.</p>
           <div className="social-links">
-            <a href="#" className="social-link" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1DJWaHYX3w/" className="social-link" aria-label="Facebook">
               <span className="social-icon">📘</span>
             </a>
-            <a href="#" className="social-link" aria-label="Twitter">
+            <a href="https://www.facebook.com/share/17FUTK1RL8/" className="social-link" aria-label="Twitter">
               <span className="social-icon">🐦</span>
             </a>
-            <a href="#" className="social-link" aria-label="LinkedIn">
+            <a href="https://www.tiktok.com/@sigmaheliosepsilon?_t=ZS-900gYwpE9mz&_r=1" className="social-link" aria-label="Tiktok">
               <span className="social-icon">💼</span>
             </a>
-            <a href="#" className="social-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/olaideomobolaji?igsh=MTFlcmQ1Y2VyZXE0bg==" className="social-link" aria-label="Instagram">
               <span className="social-icon">📷</span>
             </a>
           </div>
@@ -85,10 +85,6 @@ const Footer = () => {
             <li>
               <span className="contact-icon">📞</span>
               <span>+234 9157444669</span>
-            </li>
-            <li>
-              <span className="contact-icon">🏢</span>
-              <span>123 Business District<br />New York, NY 10001</span>
             </li>
           </ul>
         </div>

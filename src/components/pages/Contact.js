@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './Contact.css';
 import { Link } from 'react-router-dom';
 
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,6 +13,8 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -22,45 +23,56 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      service: '',
-      message: ''
+  e.preventDefault();
+  setIsSubmitting(true);
+  
+  try {
+    const response = await fetch(`${API_BASE_URL}api/contact/submit`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
+    
+    const data = await response.json();
+
+    if (data.success) {
+      alert(data.message || 'Thank you for your message! We will get back to you soon.');
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        service: '',
+        message: ''
+      });
+    } else {
+      alert(data.message || 'Error sending message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Error sending message. Please try again.');
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   const contactMethods = [
     {
       icon: '📧',
       title: 'Email Us',
-      details: 'olaideomobolaji2000@gmail.com',
+      details: 'megaalphslimited@gmail.com',
       description: 'Send us an email anytime'
     },
     {
       icon: '📞',
       title: 'Call Us',
       details: '+234 9157444669',
-      description: 'Mon-Fri from 9am to 6pm'
     },
     {
       icon: '🏢',
-      title: 'Visit Us',
-      details: '123 Business District',
-      subdetails: 'New York, NY 10001',
-      description: 'Feel free to visit our office'
+      details: 'Lokoja,Kogi state',
     }
   ];
 
@@ -153,6 +165,8 @@ const Contact = () => {
                       <option value="project-management">Project Management</option>
                       <option value="training-development">Training & Development</option>
                       <option value="risk-management">Risk Management</option>
+                      <option value="it-consulting">IT Consulting</option>
+                      <option value="financial-consulting">Financial Consulting</option>
                     </select>
                   </div>
                 </div>
