@@ -28,9 +28,9 @@ const handleSubmit = async (e) => {
   
   try {
     // Fixed: Use the correct API base URL from environment variable
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://mega-alphas-portfolio-backend-api.onrender.com';
+    const API_BASE_URL = 'https://mega-alphas-portfolio-backend-api.onrender.com';
     
-    const response = await fetch(`${API_BASE_URL}/api/contact/submit`, { // Added leading slash
+    const response = await fetch(`${API_BASE_URL}/api/contact/submit`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
