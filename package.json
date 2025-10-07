@@ -1,5 +1,5 @@
 {
-  "name": "mega-alphas-portfolio",
+  "name": "mega-alphs-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:prod": "REACT_APP_API_BASE_URL=https://mega-alphas-portfolio-backend-api.onrender.com react-scripts build",
+    "build:prod": "REACT_APP_API_BASE_URL=https://mega-alphs-portfolio-backend-api.onrender.com react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

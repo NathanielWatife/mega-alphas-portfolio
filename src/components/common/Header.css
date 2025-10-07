@@ -22,10 +22,10 @@
   margin: 0 auto;
 }
 
-.logoImg {
-  width: 40px;
+.logo-image {
+  width: auto;
   height: 40px;
-  border-radius: 20px;
+  object-fit: contain;
 }
 
 .logo {

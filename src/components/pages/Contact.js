@@ -1,4 +1,3 @@
-// src/components/pages/Contact.js
 import React, { useState } from 'react';
 import './Contact.css';
 import { Link } from 'react-router-dom';
@@ -11,9 +10,11 @@ const Contact = () => {
     service: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [
+    isSubmitting, 
+    // setIsSubmitting
+  ] = useState(false);
 
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
   const handleChange = (e) => {
     setFormData({
@@ -24,13 +25,10 @@ const Contact = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  setIsSubmitting(true);
+  // setIsSubmitting(true);
   
-  try {
-    // Fixed: Use the correct API base URL from environment variable
-    const API_BASE_URL = 'https://mega-alphas-portfolio-backend-api.onrender.com';
-    
-    const response = await fetch(`${API_BASE_URL}/api/contact/submit`, { 
+  try {    
+    const response = await fetch('http://localhost:5000/api/submit', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,10 +36,10 @@ const handleSubmit = async (e) => {
       body: JSON.stringify(formData),
     });
     
-    const data = await response.json();
+    const result = await response.json();
 
-    if (data.success) {
-      alert(data.message || 'Thank you for your message! We will get back to you soon.');
+    if (result.success) {
+      alert(result.message || 'Thank you for your message! We will get back to you soon.');
       // Reset form
       setFormData({
         name: '',
@@ -51,14 +49,15 @@ const handleSubmit = async (e) => {
         message: ''
       });
     } else {
-      alert(data.message || 'Error sending message. Please try again.');
+      alert(result.message || 'Error sending message. Please try again.');
     }
   } catch (error) {
     console.error('Error submitting form:', error);
     alert('Error sending message. Please try again.');
-  } finally {
-    setIsSubmitting(false);
-  }
+  } 
+  // finally {
+    // setIsSubmitting(false);
+  // }
 };
 
   const contactMethods = [
